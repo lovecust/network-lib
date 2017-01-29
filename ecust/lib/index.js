@@ -14,13 +14,13 @@ let Constants = require('./Constants');
  * Library current status.
  */
 exports.status = () => {
-	return Utils.doFetch(Constants.URL_LIBRARY_STATUS)
+	return Utils.doGET(Constants.URL_LIBRARY_STATUS)
 };
 
 /**
  * Library status history.
  */
 exports.statusStatistics = () => {
-	return Utils.doFetch(Constants.URL_LIBRARY_STATUS_STATISTICS)
+	return Utils.doGET(Constants.URL_LIBRARY_STATUS_STATISTICS)
 };
 

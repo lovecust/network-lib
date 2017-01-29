@@ -11,5 +11,5 @@ let Utils = require('./../Utils');
  * JWC newses list.
  */
 exports.newsesList = () => {
-	return Utils.doFetch(Constants.URL_API_JWC_NEWSES);
+	return Utils.doGET(Constants.URL_API_JWC_NEWSES);
 };
