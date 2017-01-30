@@ -22,23 +22,23 @@ exports.enrollActivity = (activityID, member) => {
 };
 
 /**
- * Get the specific Activity detail.
+ * Get the specific Member detail.
  */
-exports.getActivityDetail = (activityID) => {
-	return Utils.doGET(`${Constants.URL_API_ACTIVITIES}/${activityID}`);
+exports.getMemberDetail = (activityID, memberID) => {
+	return Utils.doGET(`${Constants.URL_API_ACTIVITIES}/${activityID}/members/${memberID}`);
 };
 
 /**
- * Update the specific activity.
+ * Update the specific member.
  */
-exports.updateActivity = (activityID, activityPatch) => {
-	return Utils.doPATCH(`${Constants.URL_API_ACTIVITIES}/${activityID}`, activityPatch);
+exports.updateMember = (activityID, memberID, memberPatch) => {
+	return Utils.doPATCH(`${Constants.URL_API_ACTIVITIES}/${activityID}/members/${memberID}`, memberPatch);
 };
 
 /**
- * Remove the specific activity.
+ * Remove the specific member.
  */
-exports.removeActivity = (activityID) => {
-	return Utils.doDELETE(`${Constants.URL_API_ACTIVITIES}/${activityID}`);
+exports.removeMember = (activityID, memberID) => {
+	return Utils.doDELETE(`${Constants.URL_API_ACTIVITIES}/${activityID}/members/${memberID}`);
 };
 
