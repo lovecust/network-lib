@@ -10,6 +10,10 @@
  * Server address.
  */
 exports.SERVER_ADDRESS = 'http://api.lovecust.com';
+if (-1 < location.href.indexOf('localtest.me')) {
+	// For local test usage.
+	exports.SERVER_ADDRESS = 'http://api.localtest.me';
+}
 
 /**
  * API paths.

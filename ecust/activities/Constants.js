@@ -8,3 +8,6 @@ let LovecustConstants = require('./../Constants');
 
 exports.PATH_ECUST_ACTIVITIES = LovecustConstants.PATH_ECUST + '/activities';
 exports.URL_API_ACTIVITIES = exports.PATH_ECUST_ACTIVITIES;
+
+exports.getActivityImagesPath = (activityID) => `${exports.URL_API_ACTIVITIES}/${activityID}/images`;
+exports.getActivityImagePath = (activityID, imageID) => `${exports.getActivityImagesPath(activityID)}/${imageID}`;
