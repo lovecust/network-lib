@@ -12,7 +12,7 @@ require('whatwg-fetch');
  * @param response{String} JSON string.
  * @return {Object} Transferred Object.
  */
-let toJSON = (response) => response.json();
+const toJSON = (response) => response.json();
 
 /**
  * Set up a json request.
@@ -22,7 +22,7 @@ let toJSON = (response) => response.json();
  * @param data{Object} Data to be send.
  * @returns {Promise.<JSON>} JSON response.
  */
-let doRequest = (url, method, data) => {
+const doRequest = (url, method, data) => {
 	let options = {
 		method: method,
 		credentials: 'include',

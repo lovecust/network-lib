@@ -4,41 +4,44 @@
 
 'use strict';
 
-let Constants = require('./../Constants');
-let Utils = require('./../../Utils');
+const Constants = require('./../Constants');
+const Utils = require('./../../../Utils');
+
+const getMembersPath = Constants.getActivityMembersPath;
+const getMemberPath = Constants.getActivityMemberPath;
 
 /**
  * Activity members list.
  */
 exports.membersList = (activityID) => {
-	return Utils.doGET(`${Constants.URL_API_ACTIVITIES}/${activityID}/members`);
+	return Utils.doGET(getMembersPath(activityID));
 };
 
 /**
  * Enroll the activity.
  */
 exports.enrollActivity = (activityID, member) => {
-	return Utils.doPOST(`${Constants.URL_API_ACTIVITIES}/${activityID}/members`, member);
+	return Utils.doPOST(getMembersPath(activityID), member);
 };
 
 /**
  * Get the specific Member detail.
  */
 exports.getMemberDetail = (activityID, memberID) => {
-	return Utils.doGET(`${Constants.URL_API_ACTIVITIES}/${activityID}/members/${memberID}`);
+	return Utils.doGET(getMemberPath(activityID, memberID));
 };
 
 /**
  * Update the specific member.
  */
 exports.updateMember = (activityID, memberID, memberPatch) => {
-	return Utils.doPATCH(`${Constants.URL_API_ACTIVITIES}/${activityID}/members/${memberID}`, memberPatch);
+	return Utils.doPATCH(getMemberPath(activityID, memberID), memberPatch);
 };
 
 /**
  * Remove the specific member.
  */
 exports.removeMember = (activityID, memberID) => {
-	return Utils.doDELETE(`${Constants.URL_API_ACTIVITIES}/${activityID}/members/${memberID}`);
+	return Utils.doDELETE(getMemberPath(activityID, memberID));
 };
 

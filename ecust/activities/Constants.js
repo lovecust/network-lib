@@ -4,10 +4,18 @@
 
 'use strict';
 
-let LovecustConstants = require('./../Constants');
+const LovecustConstants = require('./../../Constants');
 
 exports.PATH_ECUST_ACTIVITIES = LovecustConstants.PATH_ECUST + '/activities';
 exports.URL_API_ACTIVITIES = exports.PATH_ECUST_ACTIVITIES;
 
-exports.getActivityImagesPath = (activityID) => `${exports.URL_API_ACTIVITIES}/${activityID}/images`;
+/**
+ * Generate resource url.
+ */
+const getActivityPath = exports.getActivityPath = (activityID) => `${exports.URL_API_ACTIVITIES}/${activityID}`;
+// Images
+exports.getActivityImagesPath = (activityID) => `${getActivityPath(activityID)}/images`;
 exports.getActivityImagePath = (activityID, imageID) => `${exports.getActivityImagesPath(activityID)}/${imageID}`;
+// Members.
+exports.getActivityMembersPath = (activityID) => `${getActivityPath(activityID)}/members`;
+exports.getActivityMemberPath = (activityID, memberID) => `${exports.getActivityMembersPath(activityID)}/${memberID}`;

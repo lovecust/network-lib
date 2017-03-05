@@ -9,13 +9,14 @@
 /**
  * Server address.
  */
-exports.SERVER_ADDRESS = 'http://api.lovecust.com';
+let address = exports.SERVER_ADDRESS = 'http://www.onecust.site:39358';
 if (-1 < location.href.indexOf('localtest.me')) {
 	// For local test usage.
-	exports.SERVER_ADDRESS = 'http://api.localtest.me';
+	address = exports.SERVER_ADDRESS = 'http://api.localtest.me:39358';
 }
 
 /**
  * API paths.
  */
-exports.PATH_ECUST = exports.SERVER_ADDRESS + '/ecust';
+exports.PATH_ECUST = `${address}/ecust`;
+exports.PATH_USERS = `${address}/users`;

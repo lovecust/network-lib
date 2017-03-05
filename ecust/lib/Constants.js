@@ -6,7 +6,7 @@
 
 'use strict';
 
-let LovecustConstants = require('./../Constants');
+const LovecustConstants = require('./../../Constants');
 
 exports.PATH_ECUST_LIBRARY = LovecustConstants.PATH_ECUST + '/library';
 exports.URL_LIBRARY_STATUS = exports.PATH_ECUST_LIBRARY + '/status';

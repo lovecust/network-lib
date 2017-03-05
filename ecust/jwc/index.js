@@ -4,8 +4,8 @@
 
 'use strict';
 
-let Constants = require('./Constants');
-let Utils = require('./../Utils');
+const Constants = require('./Constants');
+const Utils = require('./../../Utils');
 
 /**
  * JWC newses list.

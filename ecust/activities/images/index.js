@@ -4,14 +4,17 @@
 
 'use strict';
 
-let Constants = require('./../Constants');
-let Utils = require('./../../Utils');
+const Constants = require('./../Constants');
+const Utils = require('./../../../Utils');
+
+const getImagesPath = Constants.getActivityImagesPath;
+const getImagePath = Constants.getActivityImagePath;
 
 /**
  * Activity images list.
  */
 exports.imagesList = (activityID) => {
-	return Utils.doGET(Constants.getActivityImagesPath(activityID));
+	return Utils.doGET(getImagesPath(activityID));
 };
 
 /**
@@ -21,7 +24,7 @@ exports.uploadImage = (activityID, name, file) => {
 	let data = new FormData();
 	data.append('image', file);
 	data.append('name', name);
-	return fetch(Constants.getActivityImagesPath(activityID), {
+	return fetch(getImagesPath(activityID), {
 		method: 'POST',
 		credentials: 'include',
 		body: data
@@ -33,20 +36,20 @@ exports.uploadImage = (activityID, name, file) => {
  * Get the specific Image detail.
  */
 exports.getImageDetail = (activityID, imageID) => {
-	return Utils.doGET(Constants.getActivityImagePath(activityID, imageID));
+	return Utils.doGET(getImagePath(activityID, imageID));
 };
 
 /**
  * Update the specific image.
  */
 exports.updateImage = (activityID, imageID, imagePatch) => {
-	return Utils.doPATCH(Constants.getActivityImagePath(activityID, imageID), imagePatch);
+	return Utils.doPATCH(getImagePath(activityID, imageID), imagePatch);
 };
 
 /**
  * Remove the specific image.
  */
 exports.removeImage = (activityID, imageID) => {
-	return Utils.doDELETE(`${Constants.URL_API_ACTIVITIES}/${activityID}/images/${imageID}`);
+	return Utils.doDELETE(getImagePath(activityID, imageID));
 };
 

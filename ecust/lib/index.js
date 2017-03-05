@@ -7,8 +7,8 @@
 'use strict';
 
 require('whatwg-fetch');
-let Utils = require('./../Utils');
-let Constants = require('./Constants');
+const Utils = require('./../../Utils');
+const Constants = require('./Constants');
 
 /**
  * Library current status.
