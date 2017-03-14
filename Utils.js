@@ -4,7 +4,12 @@
 
 'use strict';
 
-require('whatwg-fetch');
+let fetch;
+if ('undefined' === typeof window) {
+	fetch = require('node-fetch');
+} else {
+	require('whatwg-fetch');
+}
 
 /**
  * Transfer JSON text to object.

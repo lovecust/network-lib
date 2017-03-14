@@ -9,10 +9,10 @@
 /**
  * Server address.
  */
-let address = exports.SERVER_ADDRESS = 'http://www.onecust.site:39358';
-if (-1 < location.href.indexOf('localtest.me')) {
+let address = exports.SERVER_ADDRESS = 'http://api.lovecust.com';
+if ('undefined' !== typeof location && -1 < location.href.indexOf('localtest.me')) {
 	// For local test usage.
-	address = exports.SERVER_ADDRESS = 'http://api.localtest.me:39358';
+	address = exports.SERVER_ADDRESS = 'http://api.localtest.me';
 }
 
 /**

@@ -1,0 +1,14 @@
+{
+  "name": "lovecust-network",
+  "version": "0.9.0",
+  "description": "Lovecust Network API Library Based on NodeJs/JavaScript.",
+  "main": "Constants.js",
+  "scripts": {
+    "test": "node ./_tests/index.js"
+  },
+  "author": "Fisher",
+  "license": "ISC",
+  "devDependencies": {
+    "node-fetch": "^1.6.3"
+  }
+}

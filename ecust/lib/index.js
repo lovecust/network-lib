@@ -6,7 +6,6 @@
 
 'use strict';
 
-require('whatwg-fetch');
 const Utils = require('./../../Utils');
 const Constants = require('./Constants');
 
@@ -23,4 +22,3 @@ exports.status = () => {
 exports.statusStatistics = () => {
 	return Utils.doGET(Constants.URL_LIBRARY_STATUS_STATISTICS)
 };
-
