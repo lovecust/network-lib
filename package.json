@@ -4,11 +4,13 @@
   "description": "Lovecust Network API Library Based on NodeJs/JavaScript.",
   "main": "Constants.js",
   "scripts": {
-    "test": "node ./_tests/index.js"
+    "test": "export PATH=./../../node_modules/.bin/:${PATH} && mocha ./_tests/"
   },
   "author": "Fisher",
   "license": "ISC",
   "devDependencies": {
+    "chai": "^3.5.0",
+    "mocha": "^3.2.0",
     "node-fetch": "^1.6.3"
   }
 }

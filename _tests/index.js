@@ -4,4 +4,6 @@
 
 'use strict';
 
-require('./../ecust/lib/_tests/index');
+// Ecust modules.
+require('./../ecust/lib/_tests/');
+require('./../ecust/jwc/_tests/');

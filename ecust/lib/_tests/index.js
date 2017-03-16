@@ -15,7 +15,7 @@ const Library = require('./../index');
  * @param status{Object} Library Status.
  * @return {*|boolean} Whether the library status is valid.
  */
-let isStatusValid = function (status) {
+const isStatusValid = function (status) {
 	return (
 		status &&
 		0 <= status.today &&
@@ -30,8 +30,14 @@ let isStatusValid = function (status) {
 	);
 };
 
-Library.status().then(status => {
-	assert(isStatusValid(status), 'Unexpected library status.' + JSON.stringify(status));
-}).catch(err => {
-	assert(!err, err);
+describe('Library Status', function () {
+	it('should return the expected library status object.', function (done) {
+		Library.status().then(status => {
+			assert(isStatusValid(status), status);
+			done();
+		}).catch(err => {
+			done(err);
+		});
+	});
 });
+
